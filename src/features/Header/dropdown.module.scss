@@ -1,0 +1,31 @@
+@use "../../styles/mixins";
+
+@mixin menu {
+  left: -3rem;
+
+  // note: the height of the default relative container is based on the button height
+  top: 2.5rem;
+
+  // note: use padding instead of top offset so that the onLeave event is not fired
+  padding: 0.25rem;
+
+  @include mixins.lg {
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: relative;
+    padding: 0;
+  }
+
+  &__is_small {
+    // note: the height of the default relative container is based on the button height
+    top: 2rem;
+    transform: unset;
+
+    @include mixins.lg {
+      width: 100%;
+      position: relative;
+      padding: 0;
+    }
+  }
+}

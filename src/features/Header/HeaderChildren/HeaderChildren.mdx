@@ -1,0 +1,32 @@
+import { Meta, Story } from "@storybook/blocks";
+
+import * as HeaderChildrenStories from "./HeaderChildren.stories";
+
+<Meta of={HeaderChildrenStories} />
+
+# Header Container
+
+This will display two groups with `HeaderDropdown` and `Button` elements.
+The styling is optimized for a `Header` if the [breakpoint](?path=/docs/design-system-breakpoints--page) is greater than `lg`.
+
+<Story of={HeaderChildrenStories.Default} />
+
+## Import
+
+```tsx
+import { HeaderChildren } from "components-boilerplate";
+```
+
+## Usage
+
+```tsx
+<HeaderWrapper>
+  <HeaderContainer>
+    <HeaderChildren />
+  </HeaderContainer>
+</HeaderWrapper>
+```
+
+### `small`
+
+<Story of={HeaderChildrenStories.Small} />

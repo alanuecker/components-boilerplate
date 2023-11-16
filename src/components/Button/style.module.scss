@@ -1,0 +1,7 @@
+@use "../../styles/button-themes";
+@use "./base.module" as *;
+
+.root {
+  @include button;
+  @include button-themes.themes;
+}

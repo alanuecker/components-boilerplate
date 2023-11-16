@@ -1,0 +1,177 @@
+@use "./mixins";
+
+:root {
+  // color
+  --primary-color: #471aff;
+  --primary-light-color: rgb(71 26 255 / 65%);
+  --primary-lighter-color: rgb(71 26 255 / 25%);
+  --primary-lightest-color: rgb(71 26 255 / 5%);
+  --primary-alternative-color: #00ffb7;
+  --primary-alternative-light-color: rgb(0 255 183 / 65%);
+  --primary-alternative-lighter-color: rgb(0 255 183 / 25%);
+
+  // surface
+  --light-bg: #fafafa;
+  --light-elevation-0: #fff;
+  --light-elevation-1: #f4f4f5;
+  --light-elevation-2: #ececee;
+  --dark-bg: #161617;
+  --dark-elevation-0: #000;
+  --dark-elevation-1: #131315;
+  --dark-elevation-2: #27272b;
+  --static-elevation-0: #7b8187;
+
+  // foreground
+  --black-color: #161617;
+  --black-light-color: rgb(22 22 23 / 65%);
+  --black-lighter-color: rgb(22 22 23 / 25%);
+  --white-color: #fff;
+  --white-light-color: rgb(255 255 255 / 65%);
+  --white-lighter-color: rgb(255 255 255 / 25%);
+
+  // border
+  --primary-border-color: rgb(71 26 255 / 30%);
+  --primary-alternative-border-color: rgb(0 255 183 / 30%);
+  --black-border-color: rgb(22 22 23 / 30%);
+  --black-light-border-color: rgb(22 22 23 / 8%);
+  --white-border-color: rgb(255 255 255 / 30%);
+
+  // shadow
+  --shadow-01: 0px 0px 2px rgb(22 22 23 / 25%),
+    0px 4px 6px -2px rgb(22 22 23 / 12%), 0px 2px 2.5px -2px rgb(22 22 23 / 12%),
+    0px 1px 1.75px -2px rgb(22 22 23 / 12%);
+  --shadow-02: 0px 0px 2px rgb(22 22 23 / 25%),
+    0px 8px 12px -2px rgb(22 22 23 / 12%), 0px 4px 5px -2px rgb(22 22 23 / 12%),
+    0px 2px 3.5px -2px rgb(22 22 23 / 12%);
+  --shadow-03: 0px 0px 2px rgb(22 22 23 / 25%),
+    0px 12px 18px -2px rgb(22 22 23 / 12%),
+    0px 6px 7.5px -2px rgb(22 22 23 / 12%),
+    0px 3px 5.25px -2px rgb(22 22 23 / 12%);
+
+  // focus
+  --focus-shadow: 0 0 0 4px var(--primary-color);
+
+  // button
+  // button - primary
+  --button-primary-border: 1px solid rgb(22 22 22 / 30%);
+  --button-primary-color: var(--white-color);
+  --button-primary-bg: var(--primary-color);
+  --button-primary-img: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 16%) 0%,
+    rgb(255 255 255 / 0%) 100%
+  );
+  --button-primary-hover-bg: var(--primary-color);
+  --button-primary-hover-img: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 24%) 0%,
+    rgb(255 255 255 / 0%) 100%
+  );
+
+  // note: the primary button gets it's own focus shadow
+  // since the color is too similar to the background color
+  --button-primary-focus-shadow: 0 0 0 4px var(--primary-light-color);
+
+  // button - secondary
+  --button-secondary-border: 1px solid rgb(22 22 23 / 16%);
+  --button-secondary-color: var(--black-color);
+  --button-secondary-bg: rgb(255 255 255 / 60%);
+  --button-secondary-img: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 30%) 0%,
+    rgb(219 222 224 / 30%) 100%
+  );
+  --button-secondary-hover-bg: rgb(219 222 224 / 60%);
+  --button-secondary-hover-img: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 60%) 0%,
+    rgb(219 222 224 / 60%) 100%
+  );
+
+  // button - tertiary
+  --button-tertiary-color: var(--black-color);
+  --button-tertiary-bg: rgb(22 22 23 / 12%);
+  --button-tertiary-img: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 16%) 0%,
+    rgb(255 255 255 / 0%) 100%
+  );
+  --button-tertiary-hover-bg: rgb(22 22 23 / 12%);
+  --button-tertiary-hover-img: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 35%) 0%,
+    rgb(255 255 255 / 0%) 100%
+  );
+  --button-tertiary-border: 1px solid rgb(22 22 23 / 8%);
+
+  // button - text
+  --button-text-color: var(--black-color);
+  --button-text-hover-bg: rgb(22 22 23 / 12%);
+  --button-text-hover-img: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 35%) 0%,
+    rgb(255 255 255 / 0%) 100%
+  );
+  --button-text-border: 1px solid transparent;
+
+  // note: had to set the border color during hover to the gradient colors
+  // else the darker background color would shine through the transparent border during hover
+  // this created a dark outline around the button
+  --button-text-hover-border-top-color: rgb(255 255 255 / 35%);
+  --button-text-hover-border-bottom-color: rgb(255 255 255 / 0%);
+
+  // header
+  --header-height: 3rem;
+  --header-max-width: 1280px;
+  --header-dropdown-bg: var(--menu-bg);
+  --header-dropdown-button-hover-bg: rgb(0 0 0 / 10%);
+  --header-dropdown-button-hover-opacity: 0.5;
+  --header-dropdown-item-border: 1px solid transparent;
+  --header-dropdown-item-hover-img: linear-gradient(
+    180deg,
+    hsl(0deg 0% 100% / 30%),
+    rgb(219 222 224 / 30%)
+  );
+  --header-dropdown-item-hover-border: 1px solid rgb(22 22 23 / 16%);
+  --header-menu-bg: var(--menu-bg);
+  --header-menu-shadow: var(--menu-shadow);
+
+  @include mixins.lg {
+    --header-dropdown-bg: rgb(0 0 0 / 5%);
+    --header-menu-shadow: 0 3px 5.25px -2px rgb(22 22 23 / 12%),
+      0 6px 7.5px -2px rgb(22 22 23 / 12%), 0 12px 18px -2px rgb(22 22 23 / 12%),
+      0 0 2px 0 rgb(22 22 23 / 25%);
+  }
+
+  --header-dropdown-gradient: radial-gradient(
+    circle farthest-corner at 50% 100%,
+    rgb(71 25 255 / 16%),
+    rgb(71 25 255 / 0%) 30%
+  );
+
+  // menu
+  --menu-bg: var(--light-elevation-0);
+  --menu-shadow: 0 3px 5.25px -2px rgb(22 22 23 / 12%),
+    0 6px 7.5px -2px rgb(22 22 23 / 12%), 0 12px 18px -2px rgb(22 22 23 / 12%),
+    0 0 2px 0 rgb(22 22 23 / 25%);
+
+  // border-radius
+  --radius-xs: 0.125rem;
+  --radius-s: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-m: 0.5rem;
+  --radius-l: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-xxl: 2rem;
+  --radius-rounded: 0.5rem;
+  --radius-round: 50px;
+
+  // z-index
+  --z-index-search: 10000;
+  --z-index-navigation: 1000;
+  --z-index-backdrop: 999;
+  --z-index-header: 500;
+  --z-index-dialog: 100;
+  --z-index-menu: 100;
+  --z-index-floating: 50;
+}

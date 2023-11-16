@@ -1,0 +1,28 @@
+import { Meta, Story } from "@storybook/blocks";
+
+import * as HeaderMenuChildrenStories from "./HeaderMenuChildren.stories";
+
+<Meta of={HeaderMenuChildrenStories} />
+
+# Header Menu Container
+
+This will display two groups with `HeaderDropdown` and `MenuButton` elements.
+The styling is optimized for use in a `HeaderMenu` element.
+
+<Story of={HeaderMenuChildrenStories.Default} />
+
+## Import
+
+```tsx
+import { HeaderMenuChildren } from "components-boilerplate";
+```
+
+## Usage
+
+```tsx
+<HeaderWrapper>
+  <HeaderMenu>
+    <HeaderMenuChildren />
+  </HeaderMenu>
+</HeaderWrapper>
+```

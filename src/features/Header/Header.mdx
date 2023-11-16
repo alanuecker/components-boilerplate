@@ -1,0 +1,60 @@
+import { Meta, Story } from "@storybook/blocks";
+
+import * as HeaderStories from "./Header.stories";
+
+<Meta of={HeaderStories} />
+
+# Header
+
+<Story of={HeaderStories.Default} />
+
+<br />
+
+This component has two states and will break at the `lg` [breakpoint](?path=/docs/design-system-breakpoints--page).
+
+## Import
+
+```tsx
+import { Header } from "components-boilerplate";
+```
+
+## Props
+
+| Name    | Type    | Default | Description                                   |
+| ------- | ------- | ------- | --------------------------------------------- |
+| `small` | boolean | `false` | Display the header with small or big buttons. |
+
+## Usage
+
+```tsx
+<Header />
+```
+
+## Customization
+
+The `Header` is comprised of the following elements:
+
+```tsx
+<HeaderWrapper>
+  <HeaderLogo />
+  <HeaderContainer>
+    <HeaderChildren />
+  </HeaderContainer>
+  <HeaderCareers />
+  <HeaderMenu>
+    <HeaderMenuChildren />
+  </HeaderMenu>
+</HeaderWrapper>
+```
+
+The `HeaderContainer` will be shown on resolutions greater than `lg` and the `HeaderMenu` on smaller resolutions.
+
+> The relative element will need a top margin of `2rem` for the `sm` breakpoint.
+
+## Menu
+
+<Story of={HeaderStories.Menu} />
+
+## Small
+
+<Story of={HeaderStories.Small} />

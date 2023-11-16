@@ -1,0 +1,17 @@
+{
+  "name": "components-boilerplate",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "types": "./src/index.d.ts",
+  "module": "./components-boilerplate.js",
+  "exports": {
+    ".": "./components-boilerplate.js",
+    "./components-boilerplate.css": "./components-boilerplate.css"
+  },
+  "peerDependencies": {
+    "@ariakit/react": ">= 0.2.17",
+    "react": ">= 17.0.2",
+    "react-dom": ">= 17.0.2"
+  }
+}

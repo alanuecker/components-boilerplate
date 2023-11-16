@@ -1,0 +1,30 @@
+import { Meta, Story } from "@storybook/blocks";
+
+import * as HeaderDropdownStories from "./HeaderDropdown.stories";
+
+<Meta of={HeaderDropdownStories} />
+
+# Header Dropdown
+
+This dropdown can be used in the `HeaderWrapper` and `HeaderMenu` depending on the [breakpoint](?path=/docs/design-system-breakpoints--page).
+The design will switch to a vertical layout if the breakpoint is `lg` or below.
+
+<Story of={HeaderDropdownStories.Default} />
+
+## Import
+
+```tsx
+import { HeaderDropdown } from "components-boilerplate";
+```
+
+## Usage
+
+```tsx
+<HeaderDropdown {...rest}>
+  <ul style={{ padding: "1rem" }}>
+    <li>
+      <a href="https://storybook.js.org/">Storybook</a>
+    </li>
+  </ul>
+</HeaderDropdown>
+```

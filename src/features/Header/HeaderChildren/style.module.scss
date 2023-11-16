@@ -1,0 +1,21 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+
+  // hide the Blog button before the regular lg breakpoint to show other buttons
+  @media (max-width: 1100px) {
+    &__blog {
+      display: none;
+    }
+  }
+}

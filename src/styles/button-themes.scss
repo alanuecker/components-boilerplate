@@ -1,0 +1,47 @@
+@mixin create-theme($theme) {
+  color: var(--button-#{$theme}-color);
+  border: var(--button-#{$theme}-border);
+  background: var(--button-#{$theme}-bg);
+  background-image: var(--button-#{$theme}-img);
+
+  &:hover {
+    // overwrite system styling
+    color: var(--button-#{$theme}-color);
+    background: var(--button-#{$theme}-hover-bg);
+    background-image: var(--button-#{$theme}-hover-img);
+  }
+}
+
+@mixin themes {
+  &__is_primary {
+    @include create-theme("primary");
+
+    // note: the primary button gets it's own focus shadow
+    // since the color is too similar to the background color
+    &:focus-visible {
+      box-shadow: var(--button-primary-focus-shadow);
+    }
+  }
+
+  &__is_secondary {
+    @include create-theme("secondary");
+  }
+
+  &__is_tertiary {
+    @include create-theme("tertiary");
+  }
+
+  &__is_text {
+    color: var(--button-text-color);
+    border: var(--button-text-border);
+
+    &:hover {
+      // overwrite system styling
+      color: var(--button-text-color);
+      border-top-color: var(--button-text-hover-border-top-color);
+      border-bottom-color: var(--button-text-hover-border-bottom-color);
+      background: var(--button-text-hover-bg);
+      background-image: var(--button-text-hover-img);
+    }
+  }
+}

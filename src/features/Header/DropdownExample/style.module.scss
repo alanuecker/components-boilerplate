@@ -1,0 +1,71 @@
+@use "../../../styles/mixins";
+@use "../../../styles/typography";
+@use "../dropdown.module.scss";
+
+.content {
+  @include dropdown.menu;
+
+  width: 43.5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-image: var(--header-dropdown-gradient);
+
+  @include mixins.lg {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0 0.5rem 0.5rem;
+    background-image: none;
+  }
+}
+
+.column {
+  width: 12.5rem;
+  white-space: nowrap;
+
+  @include mixins.lg {
+    width: 100%;
+  }
+}
+
+.heading {
+  @include typography.h5;
+
+  color: var(--black-color);
+  white-space: nowrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1.5rem 1rem 1rem;
+  box-sizing: border-box;
+
+  @include mixins.lg {
+    padding: 1rem 1rem 0.5rem;
+  }
+}
+
+.support {
+  grid-column: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+
+  &__text {
+    @include typography.paragraph-small;
+
+    color: var(--black-light-color);
+    font-weight: 500;
+  }
+
+  @include mixins.lg {
+    display: none;
+  }
+}

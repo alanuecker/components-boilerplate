@@ -1,0 +1,30 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Components/Header/Header Wrapper" />
+
+# Header Wrapper
+
+A basic wrapper that defines the `width` and `height` of the `Header`.
+
+## Import
+
+```tsx
+import { HeaderWrapper } from "components-boilerplate";
+```
+
+## Usage
+
+```tsx
+<HeaderWrapper>
+  <HeaderLogo />
+  <HeaderContainer>
+    <HeaderChildren />
+  </HeaderContainer>
+  <HeaderCareers />
+  <HeaderMenu>
+    <HeaderMenuChildren />
+  </HeaderMenu>
+</HeaderWrapper>
+```
+
+> The `HeaderWrapper` is the relative anchor for `HeaderMenu` by default.

@@ -1,0 +1,77 @@
+@use "../../styles/mixins";
+@use "../../styles/button-themes" as *;
+@use "../Button/base.module" as *;
+
+.content {
+  position: absolute;
+}
+
+.container {
+  min-width: auto;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: left;
+  background: var(--header-dropdown-bg);
+  border-radius: var(--radius-xxl);
+  box-shadow: var(--menu-shadow);
+  transition:
+    transform 0.2s ease-out,
+    opacity 0.2s ease-in-out,
+    -webkit-transform 0.2s ease-out;
+
+  @include mixins.lg {
+    border-radius: 0;
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+    background-image: none;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.icon {
+  position: static;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 14px !important;
+  height: 8px !important;
+  pointer-events: none;
+  display: block;
+  flex: 0 0 auto;
+  margin-left: 0.5rem;
+
+  &__is_small {
+    width: 9px !important;
+    height: 5px !important;
+    margin-left: 0.25rem;
+  }
+}
+
+.button {
+  @include button;
+  @include themes;
+
+  position: static !important;
+
+  @include mixins.lg {
+    width: 100%;
+    min-height: 3.5rem;
+    padding: 0.5rem 1.5rem;
+    justify-content: space-between;
+    border-radius: var(--radius-xl);
+  }
+
+  &__open {
+    @include mixins.lg {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      background: var(--header-dropdown-button-hover-bg);
+      opacity: var(--header-dropdown-button-hover-opacity);
+    }
+  }
+}

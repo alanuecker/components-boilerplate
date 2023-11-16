@@ -1,0 +1,33 @@
+@use "../../styles/mixins";
+
+.root {
+  @include mixins.focus;
+
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  height: 3rem;
+  margin-right: 2.5rem;
+  color: var(--black-color);
+  text-decoration: none;
+
+  > svg {
+    height: 2rem;
+    width: auto;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    // overwrite system styling
+    color: var(--black-color);
+    text-decoration: none;
+  }
+
+  &__is_small {
+    > svg {
+      height: 1.5rem;
+    }
+  }
+}

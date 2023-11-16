@@ -1,0 +1,227 @@
+@mixin h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  letter-spacing: -0.01em;
+}
+
+@mixin h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.25rem;
+  line-height: 3.75rem;
+  letter-spacing: -0.01em;
+}
+
+@mixin h2-body-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.375rem;
+  line-height: 3rem;
+}
+
+@mixin h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+}
+
+@mixin h3-body-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8125rem;
+  line-height: 2.5rem;
+}
+
+@mixin h4 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 2rem;
+  letter-spacing: 0.01em;
+}
+
+@mixin h5 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.02em;
+}
+
+@mixin paragraph-big {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+
+@mixin paragraph {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.01em;
+}
+
+@mixin paragraph-body-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 2.5rem;
+}
+
+@mixin paragraph-small {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+@mixin link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.01em;
+}
+
+@mixin subline {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+
+@mixin subline-body-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 2.5rem;
+}
+
+@mixin overline {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.03em;
+  text-indent: 0.125rem;
+  text-transform: uppercase;
+}
+
+@mixin overline-small {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.03em;
+  text-indent: 0.125rem;
+  text-transform: uppercase;
+}
+
+@mixin button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.01em;
+}
+
+@mixin button-small {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+@mixin icon {
+  font-weight: 400;
+  font-family: webflow-icons, monospace !important;
+  font-style: normal;
+  font-variant: normal;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-transform: none;
+  speak: none;
+}
+
+.typo-h1 {
+  @include h1;
+}
+
+.typo-h2 {
+  @include h2;
+}
+
+.typo-h2-body-text {
+  @include h2-body-text;
+}
+
+.typo-h3 {
+  @include h3;
+}
+
+.typo-h3-body-text {
+  @include h3-body-text;
+}
+
+.typo-h4 {
+  @include h4;
+}
+
+.typo-h5 {
+  @include h5;
+}
+
+.typo-paragraph-big {
+  @include paragraph-big;
+}
+
+.typo-paragraph {
+  @include paragraph;
+}
+
+.typo-paragraph-body-text {
+  @include paragraph-body-text;
+}
+
+.typo-paragraph-small {
+  @include paragraph-small;
+}
+
+.typo-link {
+  @include link;
+}
+
+.typo-subline {
+  @include subline;
+}
+
+.typo-subline-body-text {
+  @include subline-body-text;
+}
+
+.typo-overline {
+  @include overline;
+}
+
+.typo-overline-small {
+  @include overline-small;
+}
+
+.typo-button {
+  @include button;
+}
+
+.typo-button-small {
+  @include button-small;
+}
+
+.typo-icon {
+  @include icon;
+}

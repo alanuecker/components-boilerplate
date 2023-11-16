@@ -1,0 +1,66 @@
+// Small devices
+@mixin sm {
+  @media (max-width: 479px) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin xl {
+  @media (max-width: 111.25rem) {
+    @content;
+  }
+}
+
+@mixin focus {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    // overwrite system styling
+    outline: none;
+    box-shadow: var(--focus-shadow);
+    border-radius: var(--radius-m);
+  }
+}
+
+@mixin link {
+  @include focus;
+
+  color: var(--primary-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin popover {
+  z-index: var(--z-index-floating);
+  min-width: 16rem;
+  display: flex;
+  max-height: min(var(--popover-available-height, 18.75rem), 18.75rem);
+  flex-direction: column;
+  overscroll-behavior: contain;
+  overflow: auto;
+  padding: 1rem;
+  background: var(--light-elevation-0);
+  box-shadow: var(--shadow-01);
+  border-radius: var(--radius-xl);
+  gap: 0.75rem;
+}

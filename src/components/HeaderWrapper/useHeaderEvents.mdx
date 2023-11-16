@@ -1,0 +1,34 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Components/Header/useHeaderEvents" />
+
+# Header Wrapper
+
+Events that need to be used if the `HeaderWrapper` component is not used in your UI. This hook will provide two functions that sends CustomEvents to handle various UI states.
+
+## Import
+
+```tsx
+import { useHeaderEvents } from "components-boilerplate";
+```
+
+## Usage
+
+```tsx
+export const Wrapper: React.FC<Props> = ({ className, children, ...props }) => {
+  const wrapperRef = useRef<HTMLElement | null>(null);
+  const { handleKeyDown } = useHeaderEvents(wrapperRef);
+
+  return (
+    <nav
+      {...props}
+      ref={wrapperRef}
+      className={classNames(className, classes.root)}
+      onKeyDown={handleKeyDown}
+      onBlur={handleBlur}
+    >
+      {children}
+    </nav>
+  );
+};
+```

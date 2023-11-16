@@ -1,0 +1,48 @@
+{
+  "eslint.format.enable": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[md]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "stylelint.config": {
+    "extends": "stylelint-config-standard-scss",
+    "plugins": ["stylelint-a11y", "stylelint-prettier"],
+    "rules": {
+      "prettier/prettier": true,
+      "declaration-block-no-duplicate-properties": true,
+      "max-nesting-depth": [
+        2,
+        {
+          "ignore": ["pseudo-classes"]
+        }
+      ],
+      "value-keyword-case": ["lower", { "camelCaseSvgKeywords": true }],
+      "selector-class-pattern": null,
+      "media-feature-range-notation": "prefix"
+    }
+  },
+  "stylelint.validate": ["css", "scss"]
+}

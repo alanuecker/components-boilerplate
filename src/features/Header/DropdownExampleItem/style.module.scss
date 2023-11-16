@@ -1,0 +1,42 @@
+@use "../../../styles/mixins";
+@use "../../../styles/typography";
+
+.root {
+  @include mixins.focus;
+  @include typography.button;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  color: var(--black-color);
+  border: var(--header-dropdown-item-border);
+  border-radius: var(--radius-m);
+  line-height: 1.25rem;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  @include mixins.lg {
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    // overwrite default styling
+    color: var(--black-color);
+    text-decoration: none;
+    border: var(--header-dropdown-item-hover-border);
+    background: var(--light-elevation-0);
+    background-image: var(--header-dropdown-item-hover-img);
+  }
+
+  &__is_small {
+    @include typography.button-small;
+
+    height: 2rem;
+    padding: 0 0.75rem;
+  }
+}

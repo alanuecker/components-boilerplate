@@ -1,0 +1,49 @@
+import { Meta, Story } from "@storybook/blocks";
+
+import * as HeaderMenuStories from "./HeaderMenu.stories";
+
+<Meta of={HeaderMenuStories} />
+
+# Header Menu
+
+A menu for smaller screens that will handle both children of `HeaderMenuChildren`.
+
+<Story of={HeaderMenuStories.Default} />
+
+## Import
+
+```tsx
+import { HeaderMenu } from "components-boilerplate";
+```
+
+## Usage
+
+This component is positioned absolutely and will be hidden for breakpoints greater than `lg`.
+
+> By default `HeaderWrapper` will be the relative anchor element.
+
+```tsx
+<HeaderWrapper>
+  <HeaderMenu>
+    <HeaderMenuChildren />
+  </HeaderMenu>
+</HeaderWrapper>
+```
+
+The menu can be positioned with the following styling applied to `HeaderMenu` if a parent element has `position: relative`.
+
+```scss
+// overwrite the ariakit positioning
+[role="presentation"] {
+  position: absolute !important;
+  left: 0rem !important;
+  top: 0rem !important;
+  transform: unset !important;
+}
+```
+
+### `small`
+
+Button `width` and `height` will be smaller.
+
+<Story of={HeaderMenuStories.Small} />

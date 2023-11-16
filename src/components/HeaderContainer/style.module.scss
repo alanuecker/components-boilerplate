@@ -1,0 +1,14 @@
+@use "../../styles/mixins";
+
+.root {
+  z-index: 3;
+  display: grid;
+  grid-template-columns: min-content auto;
+  width: 100%;
+  align-items: center;
+  position: relative;
+
+  @include mixins.lg {
+    display: none;
+  }
+}
